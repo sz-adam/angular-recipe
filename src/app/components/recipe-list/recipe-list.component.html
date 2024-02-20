@@ -1,1 +1,17 @@
-<p>recipe-list works!</p>
+
+    <h1>Recipes</h1>
+    <div class="card-container">
+        <div class="card" *ngFor="let recipe of recipes">
+          <img src="{{ recipe.imagePath }}" alt="Card Image" />
+          <h3>{{ recipe.name }}</h3>
+          <div class="ingredient">
+            <p *ngFor="let ingredient of recipe.ingredients">
+              # {{ ingredient.name }} ({{ ingredient.amount }})
+            </p>
+          </div>
+          <div class="view-container">
+            <button>View</button>
+          </div>
+        </div>
+      </div>
+

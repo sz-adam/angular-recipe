@@ -1,0 +1,77 @@
+$primary-color: #3498db;
+$hover-color: #2980b9;
+$hover-text-color: #fff;
+$ingredient-color: #555;
+
+h1 {
+  text-align: center;
+  color: $primary-color;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: 350px;
+  height: 500px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+
+  img {
+    width: 100%;
+    height: 70%;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .ingredient {
+    display: flex;
+    justify-content: center;
+    p {
+      margin: 4px 0;
+      font-size: 1rem;
+      color: $ingredient-color;
+      padding-right: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &:hover {
+    transform: scale(1.01);
+  }
+  .view-container {
+    display: flex;
+    justify-content: end;
+    margin-right: 5px;
+
+    button {
+      border: none;
+      background-color: transparent;
+      font-weight: bold;
+      color: $primary-color;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-color;
+        color: $hover-text-color;
+      }
+    }
+  }
+}
