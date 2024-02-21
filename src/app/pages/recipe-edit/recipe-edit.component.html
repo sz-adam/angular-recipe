@@ -30,12 +30,13 @@
   <!-- Hozzávalók -->
   <div formArrayName="ingredients">
     <div *ngFor="let ingredientGroup of ingredientsFormArray.controls; let i = index" [formGroupName]="i">
-      <input type="text" formControlName="name" placeholder="Hozzávaló neve" />
-      <input type="text" formControlName="amount" placeholder="Mennyiség" />
-      <button type="button" >Törlés</button>
+      <input type="text" formControlName="name" placeholder="ingredient" />
+      <input type="text" formControlName="amount" placeholder="db" />
+      <button type="button" >Add</button>
+      <button type="button" >Delete</button>
     </div>
   </div>
 
  
-  <button type="submit">Save</button>
+  <button type="submit" (click)="saveRecipe()">Save</button>
 </form>

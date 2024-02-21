@@ -6,7 +6,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Recipe } from '../../model/recipe';
 import { RecipeService } from '../../services/recipe.service';
 import { CommonModule } from '@angular/common';
@@ -22,11 +22,13 @@ import { Ingredient } from '../../model/ingredient';
 export class RecipeEditComponent implements OnInit {
   recipeForm!: FormGroup;
   editMode: boolean = false;
+  recipeId: number = 0;
 
   constructor(
     private route: ActivatedRoute,
     private recipeService: RecipeService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -36,6 +38,7 @@ export class RecipeEditComponent implements OnInit {
 
       //editMode adatbetöltés a formba
       if (this.editMode) {
+        this.recipeId = recipeId;
         const recipe = this.recipeService.getRecipe(recipeId);
         this.initForm(recipe);
       } else {
@@ -77,5 +80,16 @@ export class RecipeEditComponent implements OnInit {
   // html megjelenítés
   get ingredientsFormArray() {
     return this.recipeForm.get('ingredients') as FormArray;
+  }
+
+  saveRecipe() {
+    const formData = this.recipeForm.value;
+
+    if (this.editMode) {
+      this.recipeService.updateRecipe(this.recipeId, formData);
+    } else {
+      this.recipeService.addRecipe(formData);
+    }
+    this.router.navigate(['/recipes']);
   }
 }
