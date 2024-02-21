@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../../model/recipe';
-import { ActivatedRoute, Params, RouterLink } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { RecipeService } from '../../services/recipe.service';
 import { CommonModule } from '@angular/common';
 
@@ -17,7 +17,8 @@ export class RecipeDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private recipeService: RecipeService
+    private recipeService: RecipeService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -29,5 +30,9 @@ export class RecipeDetailComponent implements OnInit {
       console.log(this.recipe);
     });
 
+  }
+  onEditClick() {
+    // Navigáció az edit oldalra a recipeId-vel
+    this.router.navigate(['edit'], {relativeTo:this.route});
   }
 }
