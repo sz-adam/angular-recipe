@@ -4,7 +4,7 @@ $hover-text-color: #fff;
 $ingredient-color: #555;
 
 .detail-container {
-  width: 100%;  
+  width: 100%;
 
   .button-container {
     display: flex;
@@ -33,7 +33,6 @@ $ingredient-color: #555;
     justify-content: center;
     align-items: center;
     width: 100%;
-    
 
     img {
       width: 100%;
@@ -59,6 +58,27 @@ $ingredient-color: #555;
         display: flex;
         justify-content: center;
         color: $ingredient-color;
+
+        span {
+          padding: 10px;
+        }
+      }
+      .ingredient-button {
+        border: none;
+        background-color: transparent;
+        font-weight: bold;
+        color: $primary-color;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+        align-self: flex-end;
+
+        &:hover {
+          background-color: $hover-color;
+          color: $hover-text-color;
+        }
       }
     }
   }
@@ -67,6 +87,5 @@ $ingredient-color: #555;
 @media screen and (max-width: 1212px) {
   .recipe-container {
     flex-direction: column;
-  
   }
 }

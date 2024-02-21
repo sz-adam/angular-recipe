@@ -1,9 +1,10 @@
 <div class="detail-container">
   <div class="button-container">
-    <button>back</button>
+    <button [routerLink] ="['/recipes']">back</button>
     <div>
       <button>edit</button>
       <button>delete</button>
+      
     </div>
   </div>
   <div class="recipe-container" *ngIf="recipe">
@@ -14,10 +15,14 @@
       <h1>{{ recipe.name }}</h1>
       <p>{{ recipe.description }}</p>
       <div class="recipe-ingredients">
-        <p *ngFor="let ingredient of recipe.ingredients">
+        <span *ngFor="let ingredient of recipe.ingredients">
           #{{ ingredient.name }} ({{ ingredient.amount }})
-        </p>
+        </span>       
       </div>
+      
+        <button class="ingredient-button">add Shopping</button>
+     
+     
     </div>
   </div>
 </div>
