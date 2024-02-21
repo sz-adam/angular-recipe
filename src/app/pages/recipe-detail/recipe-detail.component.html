@@ -1,1 +1,23 @@
-<p>recipe-detail works!</p>
+<div class="detail-container">
+  <div class="button-container">
+    <button>back</button>
+    <div>
+      <button>edit</button>
+      <button>delete</button>
+    </div>
+  </div>
+  <div class="recipe-container" *ngIf="recipe">
+    <div class="recipe-image">
+      <img src="{{ recipe.imagePath }}" alt="" />
+    </div>
+    <div class="recipe-text">
+      <h1>{{ recipe.name }}</h1>
+      <p>{{ recipe.description }}</p>
+      <div class="recipe-ingredients">
+        <p *ngFor="let ingredient of recipe.ingredients">
+          #{{ ingredient.name }} ({{ ingredient.amount }})
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

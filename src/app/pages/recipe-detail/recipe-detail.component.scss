@@ -1,0 +1,72 @@
+$primary-color: #3498db;
+$hover-color: #2980b9;
+$hover-text-color: #fff;
+$ingredient-color: #555;
+
+.detail-container {
+  width: 100%;  
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    button {
+      border: none;
+      background-color: transparent;
+      font-weight: bold;
+      color: $primary-color;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-color;
+        color: $hover-text-color;
+      }
+    }
+  }
+
+  .recipe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .recipe-text {
+      width: 100%;
+      text-align: center;
+
+      h1 {
+        font-size: 2.5rem;
+        color: $hover-color;
+      }
+
+      p {
+        text-align: justify;
+        padding: 10px;
+      }
+
+      .recipe-ingredients {
+        display: flex;
+        justify-content: center;
+        color: $ingredient-color;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1212px) {
+  .recipe-container {
+    flex-direction: column;
+  
+  }
+}
