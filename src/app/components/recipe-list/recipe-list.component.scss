@@ -3,6 +3,22 @@ $hover-color: #2980b9;
 $hover-text-color: #fff;
 $ingredient-color: #555;
 
+.add-recipes {
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  color: $primary-color;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-color;
+    color: $hover-text-color;
+  }
+}
+
 h1 {
   text-align: center;
   color: $primary-color;
