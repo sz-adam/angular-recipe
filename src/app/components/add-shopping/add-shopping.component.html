@@ -1,11 +1,11 @@
-<form>
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
   <div>
     <label for="newIngredientName">Name:</label>
-    <input type="text" id="newIngredientName" required /> 
+    <input type="text" id="newIngredientName" name="newIngredientName" ngModel required /> 
     <label for="newIngredientAmount">Amount:</label>
-    <input type="text" id="newIngredientAmount" required />
+    <input type="text" id="newIngredientAmount" name="newIngredientAmount" ngModel required />
   </div>
   <div>
-    <button type="submit">Add</button>
+    <button type="submit" >Add</button>  
   </div>
 </form>
