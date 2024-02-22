@@ -41,5 +41,6 @@ export class RecipeDetailComponent implements OnInit {
   }
   addShoppingIngredient(){
     this.recipeService.addIngredientToShoppingList(this.recipe.ingredients)
+    this.router.navigate(['/shopping'])
   }
 }
