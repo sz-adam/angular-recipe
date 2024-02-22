@@ -41,6 +41,11 @@ form{
         font-size: 16px;
         border-radius: 4px;
         cursor: pointer;
+       
+        // Stílus az érvénytelen állapotban
+        &[type="submit"][disabled] {         
+          cursor: not-allowed;
+        }
     
         &:hover {
           background-color: $hover-color;
