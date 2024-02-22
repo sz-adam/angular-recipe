@@ -2,12 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Ingredient } from '../../model/ingredient';
 import { ShoppingService } from '../../services/shopping.service';
-import { AddShoppingComponent } from '../add-shopping/add-shopping.component';
 
 @Component({
   selector: 'app-shopping-list',
   standalone: true,
-  imports: [CommonModule,AddShoppingComponent],
+  imports: [CommonModule,],
   templateUrl: './shopping-list.component.html',
   styleUrl: './shopping-list.component.scss',
 })
