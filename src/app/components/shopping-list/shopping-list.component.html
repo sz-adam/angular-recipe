@@ -15,7 +15,7 @@
       <button *ngIf="editMode && editingIndex === i" (click)="saveChanges()">
         Save
       </button>
-      <button>Delete</button>
+      <button (click)="deleteIngredient(i)">Delete</button>
     </div>
   </div>
 </div>

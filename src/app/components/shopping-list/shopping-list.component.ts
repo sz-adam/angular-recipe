@@ -34,4 +34,9 @@ export class ShoppingListComponent implements OnInit {
     this.editMode = false;
     this.editingIndex = null;
   }
+  deleteIngredient(editingIndex: number) {
+    this.shoppingService.deleteIngredient(editingIndex)
+
+  }
+
 }
