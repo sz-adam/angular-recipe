@@ -18,9 +18,8 @@
         <span *ngFor="let ingredient of recipe.ingredients">
           #{{ ingredient.name }} ({{ ingredient.amount }})
         </span>       
-      </div>
-      
-        <button class="ingredient-button">add Shopping</button>
+      </div>      
+        <button class="ingredient-button" (click)="addShoppingIngredient()">add Shopping</button>
      
      
     </div>
