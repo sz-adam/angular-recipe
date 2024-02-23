@@ -8,10 +8,7 @@ export class ShoppingService {
   ingredientsChanged = new EventEmitter<Ingredient[]>();
   constructor() {}
 
-  private ingredients: Ingredient[] = [
-    new Ingredient('Apples', 5),
-    new Ingredient('Tomatoes', 15),
-  ];
+  private ingredients: Ingredient[] = [];
 
   addIngredients(ingredient: Ingredient[]) {
     this.ingredients.push(...ingredient);
