@@ -11,7 +11,20 @@ export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
   constructor(private shoppingServices: ShoppingService) {}
 
-  private recipes: Recipe[] = [];
+  private recipes: Recipe[] = [
+    new Recipe(
+          'A test recepie',
+          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora distinctio cumque veritatis libero debitis, quibusdam obcaecati cupiditate reprehenderit voluptatibus nostrum rerum beatae dolorum aspernatur eveniet totam expedita molestias nesciunt. Dolorem rem fugiat quasi omnis blanditiis. Ducimus voluptatibus eligendi reiciendis esse, aliquid molestiae inventore doloribus quas reprehenderit adipisci. Culpa quos ullam harum soluta cum et, sed libero natus quia! Repellat quaerat vitae tenetur hic provident, aliquid rerum dignissimos minima numquam mollitia ab a doloremque reprehenderit similique ut porro temporibus vero? Omnis, molestias minus? Architecto, quisquam voluptas aspernatur excepturi est odio in tenetur praesentium eius dolorem laborum enim vitae minima consequuntur non?',
+          'https://images.pexels.com/photos/6287519/pexels-photo-6287519.jpeg?auto=compress&cs=tinysrgb&w=600',
+          [new Ingredient('Lorem', 1), new Ingredient('Lorem', 2)]
+        ),
+        new Recipe(
+          'Ab test recepie',
+          '      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora distinctio cumque veritatis libero debitis, quibusdam obcaecati cupiditate reprehenderit voluptatibus nostrum rerum beatae dolorum aspernatur eveniet totam expedita molestias nesciunt. Dolorem rem fugiat quasi omnis blanditiis. Ducimus voluptatibus eligendi reiciendis esse, aliquid molestiae inventore doloribus quas reprehenderit adipisci. Culpa quos ullam harum soluta cum et, sed libero natus quia! Repellat quaerat vitae tenetur hic provident, aliquid rerum dignissimos minima numquam mollitia ab a doloremque reprehenderit similique ut porro temporibus vero? Omnis, molestias minus? Architecto, quisquam voluptas aspernatur excepturi est odio in tenetur praesentium eius dolorem laborum enim vitae minima consequuntur non?',
+          'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+          [new Ingredient('Lorem', 2)]
+        ),
+  ];
 
   getRecipes() {
     return this.recipes.slice();
