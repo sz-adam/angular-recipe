@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class RecipeDetailComponent implements OnInit {
   recipe!: Recipe;
-  id: number = 0;
+  index: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +24,7 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       const recipeId = +params['id'];
-      console.log('Recipe ID:', recipeId);
+      this.index = recipeId;
       this.recipe = this.recipeService.getRecipe(recipeId);
     });
   }
@@ -33,7 +33,7 @@ export class RecipeDetailComponent implements OnInit {
     this.router.navigate(['edit'], { relativeTo: this.route });
   }
   deleteRecipe() {
-    this.recipeService.deleteRecipe(this.id);
+    this.recipeService.deleteRecipes(this.index);
     this.router.navigate(['/recipes']);
   }
   addShoppingIngredient() {
