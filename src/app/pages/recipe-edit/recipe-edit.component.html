@@ -31,7 +31,7 @@
   <div formArrayName="ingredients">
     <div *ngFor="let ingredientGroup of ingredientsFormArray.controls; let i = index" [formGroupName]="i">
       <input type="text" formControlName="name" placeholder="ingredient" />
-      <input type="text" formControlName="amount" placeholder="db" />
+      <input type="number" formControlName="amount" placeholder="db" />
       <button type="button" (click)="addIngredient()">Add</button>
       <button type="button" (click)="deleteIngredient(i)">Delete</button>
     </div>
