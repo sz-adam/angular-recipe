@@ -1,8 +1,4 @@
-/* style.scss */
-
-$primary-color: #3498db;
-$hover-color: #2980b9; 
-$hover-text-color: #fff;
+@use '../../scss/variables' as v;
 
 .navbar {
   display: flex;
@@ -13,7 +9,7 @@ $hover-text-color: #fff;
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: $primary-color;
+    color: v.$primary-color;
     cursor: pointer;
   }
 
@@ -22,7 +18,7 @@ $hover-text-color: #fff;
     
 
     a {
-      color: $primary-color;
+      color: v.$primary-color;
       text-decoration: none;
       margin-left: 20px;
       padding: 8px 16px;
@@ -31,8 +27,8 @@ $hover-text-color: #fff;
       font-weight: bold;
 
       &:hover {
-        background-color: $hover-color;
-        color:$hover-text-color
+        background-color: v.$hover-color;
+        color:v.$hover-text-color
       }
     }
   }

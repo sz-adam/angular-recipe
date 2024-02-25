@@ -1,55 +1,35 @@
-$primary-color: #3498db;
-$hover-color: #2980b9;
-$hover-text-color: #fff;
-$ingredient-color: #555;
+@use "../../scss/variables" as v;
 
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+.ingredient-form {
+  max-width: 400px;
+  margin: auto;
 
-    div{
-        display: flex;
-        margin-bottom: 20px;
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
     }
 
-    label{
-        font-weight: bold;
-        font-size: 20px;
-        padding: 0 10px;        
-    }
     input {
-     
-        border: 1px solid $ingredient-color;
-        border-radius: 4px;
-        transition: border-color 0.3s ease;
-        width: 100%;
-    
-        &:focus {
-          outline: none;
-          border-color: $hover-color;
-        }
-      }
-      button {
-        border: none;
-        background-color: transparent;
-        font-weight: bold;
-        color: $primary-color;
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 4px;
-        cursor: pointer;
-       
-        // Stílus az érvénytelen állapotban
-        &[type="submit"][disabled] {         
-          cursor: not-allowed;
-        }
-    
-        &:hover {
-          background-color: $hover-color;
-          color: $hover-text-color;
-        }
-      }
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid v.$add-shopping-border;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: v.$primary-color;
+      color: v.$hover-text-color;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: v.$disabled;
+      cursor: not-allowed;
+    }
+  }
 }

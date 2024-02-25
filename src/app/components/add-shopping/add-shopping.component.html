@@ -1,11 +1,13 @@
-<form (ngSubmit)="onSubmit(form)" #form="ngForm">
-  <div>
+<form (ngSubmit)="onSubmit(form)" #form="ngForm" class="ingredient-form">
+  <div class="form-group">
     <label for="newIngredientName">Name:</label>
-    <input type="text" id="newIngredientName" name="newIngredientName" ngModel required /> 
-    <label for="newIngredientAmount">Amount:</label>
-    <input type="text" id="newIngredientAmount" name="newIngredientAmount" ngModel required />
+    <input type="text" id="newIngredientName" name="newIngredientName" ngModel required class="form-control" />
   </div>
-  <div>
-    <button type="submit"  [disabled]="!form.valid">Add</button>  
+  <div class="form-group">
+    <label for="newIngredientAmount">Amount:</label>
+    <input type="text" id="newIngredientAmount" name="newIngredientAmount" ngModel required class="form-control" />
+  </div>
+  <div class="form-group">
+    <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Add</button>
   </div>
 </form>

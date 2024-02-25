@@ -1,13 +1,10 @@
-$primary-color: #3498db;
-$hover-color: #2980b9;
-$hover-text-color: #fff;
-$ingredient-color: #555;
+@use '../../scss/variables' as v;
 
 form {
   max-width: 600px;
   margin: auto;
   padding: 20px;
-  border: 1px solid $ingredient-color;
+  border: 1px solid v.$ingredient-color;
   border-radius: 8px;
 
   div {
@@ -24,7 +21,7 @@ form {
       width: 100%;
       padding: 8px;
       margin-bottom: 10px;
-      border: 1px solid $ingredient-color;
+      border: 1px solid v.$ingredient-color;
       border-radius: 4px;
       box-sizing: border-box;
     }
@@ -39,15 +36,15 @@ form {
       border: none;
       background-color: transparent;
       font-weight: bold;
-      color: $primary-color;
+      color: v.$primary-color;
       padding: 10px;
       font-size: 16px;
       border-radius: 4px;
       cursor: pointer;
 
       &:hover {
-        background-color: $hover-color;
-        color: $hover-text-color;
+        background-color: v.$hover-color;
+        color: v.$hover-text-color;
       }
     }
   }
@@ -55,15 +52,15 @@ form {
     border: none;
     background-color: transparent;
     font-weight: bold;
-    color: $primary-color;
+    color: v.$primary-color;
     padding: 10px;
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
 
     &:hover {
-      background-color: $hover-color;
-      color: $hover-text-color;
+      background-color: v.$hover-color;
+      color: v.$hover-text-color;
     }
   }
 }

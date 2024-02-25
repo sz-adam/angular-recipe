@@ -1,9 +1,9 @@
 <div class="detail-container">
   <div class="button-container">
-    <button [routerLink] ="['/recipes']">back</button>
+    <button [routerLink] ="['/recipes']">Back</button>
     <div>
-      <button (click)="onEditClick()">edit</button>
-      <button (click)="deleteRecipe()">delete</button>
+      <button (click)="onEditClick()">Edit</button>
+      <button (click)="deleteRecipe()">Delete</button>
       
     </div>
   </div>
@@ -19,7 +19,7 @@
           #{{ ingredient.name }} ({{ ingredient.amount }})
         </span>       
       </div>      
-        <button class="ingredient-button" (click)="addShoppingIngredient()">add Shopping</button>
+        <button class="ingredient-button" (click)="addShoppingIngredient()">Add Shopping</button>
      
      
     </div>

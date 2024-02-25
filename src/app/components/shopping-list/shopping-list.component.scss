@@ -1,7 +1,5 @@
-$primary-color: #3498db;
-$hover-color: #2980b9;
-$hover-text-color: #fff;
-$ingredient-color: #555;
+@use '../../scss/variables' as v;
+
 
 .ingredient-item {
   display: flex;
@@ -9,8 +7,7 @@ $ingredient-color: #555;
   align-items: center;
   margin: 0;
   padding: 10px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
+  background-color: v.$shopping-color; 
   border-radius: 5px;
   margin-bottom: 10px;
   font-size: 16px;
@@ -20,33 +17,31 @@ $ingredient-color: #555;
     input {
       padding: 5px;
       margin: 2px;
-      border: 1px solid $ingredient-color;
+      border: 1px solid v.$ingredient-color;
       border-radius: 4px;
       transition: border-color 0.3s ease;
       width: 100%;
   
       &:focus {
         outline: none;
-        border-color: $hover-color;
+        border-color: v.$hover-color;
       }
     }
-  }
-
-  
+  }  
 
   button {
     border: none;
     background-color: transparent;
     font-weight: bold;
-    color: $primary-color;
+    color: v.$primary-color;
     padding: 10px;
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
 
     &:hover {
-      background-color: $hover-color;
-      color: $hover-text-color;
+      background-color: v.$hover-color;
+      color: v.$hover-text-color;
     }
   }
 }

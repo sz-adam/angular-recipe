@@ -1,27 +1,24 @@
-$primary-color: #3498db;
-$hover-color: #2980b9;
-$hover-text-color: #fff;
-$ingredient-color: #555;
+@use '../../scss/variables' as v;
 
 .add-recipes {
   border: none;
   background-color: transparent;
   font-weight: bold;
-  color: $primary-color;
+  color: v.$primary-color;
   padding: 10px;
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
 
   &:hover {
-    background-color: $hover-color;
-    color: $hover-text-color;
+    background-color: v.$hover-color;
+    color: v.$hover-text-color;
   }
 }
 
 h1 {
   text-align: center;
-  color: $primary-color;
+  color: v.$primary-color;
 }
 
 .card-container {
@@ -33,10 +30,10 @@ h1 {
 .card {
   width: 350px;
   height: 500px;
-  border: 1px solid #ddd;
+  border: 1px solid v.$ingredient-color;
   border-radius: 8px;
   margin: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px v.$ingredient-color;
   transition: transform 0.3s ease-in-out;
 
   img {
@@ -58,7 +55,7 @@ h1 {
     p {
       margin: 4px 0;
       font-size: 1rem;
-      color: $ingredient-color;
+      color: v.$ingredient-color;
       padding-right: 15px;
 
       &:last-child {
@@ -78,15 +75,15 @@ h1 {
       border: none;
       background-color: transparent;
       font-weight: bold;
-      color: $primary-color;
+      color: v.$primary-color;
       padding: 10px;
       font-size: 16px;
       border-radius: 4px;
       cursor: pointer;
 
       &:hover {
-        background-color: $hover-color;
-        color: $hover-text-color;
+        background-color: v.$hover-color;
+        color: v.$hover-text-color;
       }
     }
   }
