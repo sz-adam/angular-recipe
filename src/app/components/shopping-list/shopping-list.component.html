@@ -1,21 +1,16 @@
-<div class="ingredients-list">
-  <div
-    *ngFor="let ingredient of ingredients; let i = index"
-    class="ingredient-item"
-  >
-    <span *ngIf="!editMode || editingIndex !== i"
-      >{{ ingredient.name }} ({{ ingredient.amount }})</span
-    >
-    <div class="editMode" *ngIf="editMode && editingIndex === i">
-      <input type="text" [(ngModel)]="ingredients[i].name" />
-      <input type="number" [(ngModel)]="ingredients[i].amount" />
-    </div>
-    <div>
-      <button *ngIf="!editMode" (click)="toggleEditMode(i)">Edit</button>
-      <button *ngIf="editMode && editingIndex === i" (click)="saveChanges()">
-        Save
-      </button>
-      <button (click)="deleteIngredient(i)">Delete</button>
+<form #shoppingForm="ngForm" (ngSubmit)="saveChanges()" novalidate>
+  <div class="ingredients-list">
+    <div *ngFor="let ingredient of ingredients; let i = index" class="ingredient-item">
+      <span *ngIf="!editMode || editingIndex !== i">{{ ingredient.name }} ({{ ingredient.amount }})</span>
+      <div class="editMode" *ngIf="editMode && editingIndex === i">
+        <input type="text" [(ngModel)]="ingredients[i].name" name="name{{i}}" required />
+        <input type="number" [(ngModel)]="ingredients[i].amount" name="amount{{i}}" required />
+      </div>
+      <div>
+        <button *ngIf="!editMode" (click)="toggleEditMode(i)">Edit</button>
+        <button *ngIf="editMode && editingIndex === i "type="submit" [disabled]="shoppingForm.invalid">Save</button>
+        <button (click)="deleteIngredient(i)">Delete</button>
+      </div>
     </div>
   </div>
-</div>
+</form>

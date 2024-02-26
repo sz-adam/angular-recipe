@@ -43,5 +43,10 @@
       background-color: v.$hover-color;
       color: v.$hover-text-color;
     }
+    &:disabled {
+      background-color: v.$disabled;
+      cursor: not-allowed;
+      color:v.$hover-text-color
+    }
   }
 }
