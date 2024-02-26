@@ -3,6 +3,7 @@ import {
   FormArray,
   FormBuilder,
   FormGroup,
+  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -16,20 +17,23 @@ import { Ingredient } from '../../model/ingredient';
   selector: 'app-recipe-edit',
   templateUrl: './recipe-edit.component.html',
   styleUrls: ['./recipe-edit.component.scss'],
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule,FormsModule],
   standalone: true,
 })
 export class RecipeEditComponent implements OnInit {
   recipeForm!: FormGroup;
   editMode: boolean = false;
   recipeId: number = 0;
+  editForm: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
     private recipeService: RecipeService,
     private formBuilder: FormBuilder,
     private router: Router
-  ) {}
+  ) {
+    this.editForm = this.formBuilder.group({})
+  }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -87,13 +91,15 @@ export class RecipeEditComponent implements OnInit {
   }
 
   saveRecipe() {
-    const formData = this.recipeForm.value;
-
-    if (this.editMode) {
-      this.recipeService.updateRecipe(this.recipeId, formData);
-    } else {
-      this.recipeService.addRecipe(formData);
+    if (this.recipeForm.valid) {
+      const formData = this.recipeForm.value;
+  
+      if (this.editMode) {
+        this.recipeService.updateRecipe(this.recipeId, formData);
+      } else {
+        this.recipeService.addRecipe(formData);
+      }
+      this.router.navigate(['/recipes']);
     }
-    this.router.navigate(['/recipes']);
   }
 }
